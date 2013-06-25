@@ -26,11 +26,11 @@ return array(
     'runtimePath'=>Yii::getPathOfAlias('runtime'),
     'defaultController'=>'Admin/default',
 	// preloading components, do not change order of errorHandler and log
-	'preload'=>array('log','errorHandler','Xpress','XService','mail','bootstrap'),
+	'preload'=>array('log','errorHandler','Xpress','XService','mail'),
 
 
     'modules' => $modules,
-    
+
     'components'=>array(
 //        'assetManager' => array(
 //            'basePath'=>Yii::getPathOfAlias('site').'/../assets',
@@ -46,7 +46,7 @@ return array(
             'errorAction'=>'Admin/default/error',
         ),
         'user'=>array(
-            'class'=>'UserExt.extensions.web.auth.ExtWebUser',
+            'class'=>'Xpress.extensions.web.auth.XWebUser',
             'allowAutoLogin'=>true,
             'userClass'=>'XUser.models.AdminUser',
             'loginUrl'=>array('/Admin/auth/login'),
