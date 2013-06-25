@@ -28,9 +28,8 @@ class XUserIdentity extends CUserIdentity
     public function authenticate(){
         $user = user()->getUserModel();
         $criteria = new CDbCriteria;
-        $criteria->condition = user()->UsernameField.' ILIKE :username OR '.user()->EmailField.' ILIKE :username'; 
+        $criteria->condition = user()->UsernameField.' LIKE :username OR '.user()->EmailField.' LIKE :username';
         $criteria->params = array(':username' => $this->username);
-//        $criteria->addSearchCondition(user()->UsernameField, $this->username, false, 'AND','ILIKE');
         $this->user = $user->find($criteria);
 
         if (is_null($this->user)){
@@ -40,14 +39,14 @@ class XUserIdentity extends CUserIdentity
         }elseif(($errMsg = $this->user->validateStatus()) !== TRUE){
             errorHandler()->log(new XManagedError($errMsg, self::ERROR_STATUS_INVALID));
         }else{
-            $this->errorCode = self::ERROR_NONE;     
+            $this->errorCode = self::ERROR_NONE;
             foreach(user()->UserStatefulFields as $field)
                 $this->setState($field, $this->user->Attributes[$field]);
         }
 
         return $this->user;
     }
-    
+
     /**
     * Translate login error code into English message
     *
@@ -56,7 +55,7 @@ class XUserIdentity extends CUserIdentity
     */
     public function getErrorMessage($code){
         if (is_string($code)) return $code;
-        
+
         switch($code){
             case self::ERROR_NONE:
                 return '';
