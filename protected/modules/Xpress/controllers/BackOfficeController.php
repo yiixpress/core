@@ -29,13 +29,26 @@ along with FlexicaCMS.  If not, see <http://www.gnu.org/licenses/>.*/
 
 class BackOfficeController extends XController
 {
-    public function init(){
+	/**
+	 * @var array the breadcrumbs of the current page. The value of this property will
+	 * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}
+	 * for more details on how to specify this property.
+	 */
+	public $breadcrumbs = array();
+
+	/**
+	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
+	 */
+	public $menu = array();
+
+
+	public function init(){
 
         parent::init();
-        if (app()->theme == null)
+        if (app()->theme == NULL)
             Yii::app()->theme = SETTINGS_BO_THEME;
     }
-    
+
     public function filters(){
         $filters = array(
                 'accessControl',
@@ -52,17 +65,5 @@ class BackOfficeController extends XController
         Yii::app()->layout = 'permission';
         $this->render('PermissionDenied');
     }
-        
-    /**
-    * Render the module menu in Admin Panel.
-    * It uses the view views/default/menu for the menu. The standard implement
-    * uses Bootstrap CSS framework for styling.
-    */
-    public function actionMenu()
-    {
-        $this->layout = false;
-        $this->renderPartial('menu');
-    }
-    
 }
 ?>
