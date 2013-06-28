@@ -37,6 +37,14 @@ class BackOfficeController extends XController
 	public $breadcrumbs = array();
 
 	/**
+	 * @var string page title used for generating breadcrumbs and page heading
+	 *
+	 * Administrative theme should utilize this property whose value should be set
+	 * in the view, not in the action (if possible) to keep the controller clean
+	 */
+	public $pageTitle = '';
+
+	/**
 	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
 	 */
 	public $menu = array();
