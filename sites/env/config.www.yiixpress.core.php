@@ -1,6 +1,6 @@
 <?php
 /**
-* Path to custom code folder under sites/<site owner>/<site> 
+* Path to custom code folder under sites/<site owner>/<site>
 */
 
 defined('SITE_DIR') or define('SITE_DIR', 'client/site1');
@@ -9,7 +9,7 @@ defined('SITE_DIR') or define('SITE_DIR', 'client/site1');
 * The site's owner, support one user/organization to maintain many sites.
 * This constant is currently used only by [SITE_OWNER]_sites table to group
 * all sites belong to one owner.
-* 
+*
 * It's suggested that the  site owner is part of the SITE_ID value
 */
 
@@ -29,6 +29,7 @@ $dbs = array();
 $dbs['db']['connectionString'] = 'mysql:host=localhost;port=3306;dbname=yiixpress_core;';
 $dbs['db']['username'] = 'root';
 $dbs['db']['password'] = 'mysql';
+$dbs['db']['tablePrefix'] = SITE_ID.'_';
 
 
 /**
