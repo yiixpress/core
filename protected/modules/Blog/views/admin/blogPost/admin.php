@@ -32,7 +32,23 @@ $this->breadcrumbs=array(
             'value'=>'$data->id',
             'htmlOptions'=>array('width'=>'3%'),
         ),
-		'title',
+		array(
+			'header' => 'Title',
+			'value' => function($data){
+				return CHtml::encode($data->title) . '<br /><span class="additional-info">' . $data->alias.'</span>';
+			},
+			'type' => 'raw',
+			'filter' => CHtml::activeTextField($model, "title"),
+			'htmlOptions' => array('width' => '30%')
+		),
+		array(
+			'header' => 'Content',
+			'value' => function($data){
+				return substr(strip_tags($data->content),0,150);
+			},
+			'filter'=> CHtml::activeTextField($model,"content"),
+			'htmlOptions' => array('width' => '50%')
+		),
 		'revision_log',
 		/*
 		'status',
@@ -44,6 +60,7 @@ $this->breadcrumbs=array(
 			'class'=>'CButtonColumn',
             'viewButtonOptions'=>array('class' => 'view xtarget-detail'),
             'updateButtonOptions'=>array('class' => 'update xtarget-detail'),
+			'htmlOptions' => array('style' => 'min-width:60px')
 		),
 	),
 ));

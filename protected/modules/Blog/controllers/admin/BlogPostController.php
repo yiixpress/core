@@ -37,7 +37,7 @@ class BlogPostController extends BackOfficeController
 	{
         if (Yii::app()->request->IsPostRequest) {
             // save posted data
-            $model = $this->postModel('BlogPost');
+            $model = $this->postModel('BlogPost', array('content' => 'tag'));
             $result = $this->api('Blog.BlogPost.save', array('input' => $model));
 
             if (! errorHandler()->hasErrors())

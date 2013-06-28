@@ -12,10 +12,10 @@
 * @subpackage
 */
 class BlogPostApi extends ApiController
-{    
+{
     /**
     * Get a BlogPost model given its ID
-    * 
+    *
     * @param int id BlogPost ID
     * @return BlogPost    */
     public function actionGet($id){
@@ -35,21 +35,23 @@ class BlogPostApi extends ApiController
     * Save a BlogPost model
     *
     * @param array $attributes Model attributes
-    * @return BlogPost    */    
+    * @return BlogPost    */
     public function actionSave(array $attributes) {
         $input = new XInputFilter($attributes);
-        $model = $input->getModel('BlogPost');
-        
+
+	    // Exclude filter to keep tags in the content field which is rich text content
+        $model = $input->getModel('BlogPost', array('content' => 'tag'));
+
         if (! $model->save())
             errorHandler()->log(new XModelManagedError($model,0));
-            
+
         $this->result = $model;
     }
 
 
     public function actionDelete(array $ids) {
         $deleted = array();
-        
+
         foreach($ids as $id) {
             $model = BlogPost::model()->findByPk($id);
             /**
