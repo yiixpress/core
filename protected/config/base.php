@@ -115,7 +115,7 @@ if (YII_DEBUG)
 if (isset($dbs) && is_array($dbs))
     foreach($dbs as $key => $dbConfig)
     {
-        $config['components'][$key]=array(    
+        $config['components'][$key]=array(
             'class' => 'CDbConnection',
             'connectionString' => $dbConfig['connectionString'],
             'username' => $dbConfig['username'],
@@ -129,6 +129,8 @@ if (isset($dbs) && is_array($dbs))
     //        'queryCachingDuration'=>60,
     //        'queryCachingCount'=> 0,
         );
+	    if (isset($dbConfig['tablePrefix']))
+		    $config['components'][$key]['tablePrefix'] = $dbConfig['tablePrefix'];
     }
 
 return $config;
