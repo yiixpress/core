@@ -1,13 +1,3 @@
-/* ==========================================================
- * AdminKIT v1.5
- * common.js
- *
- * http://www.mosaicpro.biz
- * Copyright MosaicPro
- *
- * Built exclusively for sale @Envato Marketplaces
- * ========================================================== */
-
 /* Utility functions */
 
 // scroll to element animation
