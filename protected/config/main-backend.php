@@ -12,8 +12,8 @@ $modules['gii'] = array(
     // 'ipFilters'=>array('127.0.0.1','::1'),
     'params'=>array(
         'model'=>array(
-            'created_time_field_name'=>'creation_datetime',
-            'last_update_time_field_name'=>'last_update',
+            'created_time_field_name'=>'date_added',
+            'last_update_time_field_name'=>'date_updated',
         ),
     )
 );
@@ -26,7 +26,7 @@ return array(
     'runtimePath'=>Yii::getPathOfAlias('runtime'),
     'defaultController'=>'Admin/default',
 	// preloading components, do not change order of errorHandler and log
-	'preload'=>array('log','errorHandler','Xpress','XService','mail'),
+	'preload'=>array('log','errorHandler','Xpress','XService','mail','bootstrap'),
 
 
     'modules' => $modules,
