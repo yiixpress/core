@@ -86,9 +86,9 @@
 			<div class="heading-buttons">
 				<h3>
 					<?php if ($this->pageTitle != '') : ?>
-						<?php echo $this->pageTitle; ?><span> | <?php echo $this->module->Id ?></span>
+						<?php echo $this->pageTitle; ?><span> | <?php echo $this->module->MetaData['friendly_name'] ?></span>
 					<?php else: ?>
-						<?php echo $this->module->Id ?>
+						<?php echo $this->module->MetaData['friendly_name'] ?>
 					<?php endif; ?>
 				</h3>
 
