@@ -110,7 +110,9 @@
 			<div class="separator bottom"></div>
 			<!-- // Heading END -->
 
-			<?php echo $content; ?>
+			<div class="innerLR">
+				<?php echo $content; ?>
+			</div>
 		</div>
 		<!-- // Content END -->
 	</div>

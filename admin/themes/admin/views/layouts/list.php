@@ -88,14 +88,14 @@ if (is_array($this->menu) && empty($this->menu))
 		<div class="separator top form-inline small">
 
 			<!-- With selected actions -->
-			<div class="pull-left checkboxs_actions hide">
+			<!-- div class="pull-left checkboxs_actions hide">
 				<label class="strong">With selected:</label>
 				<select class="selectpicker dropup" data-style="btn-default btn-small">
 					<option>Action</option>
 					<option>Action</option>
 					<option>Action</option>
 				</select>
-			</div>
+			</div -->
 			<!-- // With selected actions END -->
 
 			<!-- Pagination -->
@@ -119,8 +119,8 @@ if (is_array($this->menu) && empty($this->menu))
 
 <script>
 	// move the summary of displaying row up to the right position
-	$('.filter-bar').prev().prepend($('.grid .summary').clone());
-	$('.grid .summary').remove();
+//	$('.filter-bar').prev().prepend($('.grid .summary').clone());
+//	$('.grid .summary').remove();
 </script>
 
 <?php $this->endContent(); ?>

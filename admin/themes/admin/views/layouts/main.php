@@ -10,8 +10,6 @@
 ?>
 <?php $this->beginContent('//layouts/wrapper');?>
 
-	<div class="innerLR">
 		<?php echo $content; ?>
-	</div>
 
 <?php $this->endContent(); ?>
