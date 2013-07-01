@@ -1,1 +1,45 @@
+a,a:hover{text-decoration:none;}
 body.login #login .form-signin {max-width: 400px;}
+/*header*/
+body > .container-fluid{padding-top:44px}
+.navbar.main{position: fixed;top: 0;left: 0;height: 45px;z-index: 1;width: 100%;}
+.navbar.main .topnav > li.open > a{background:url("../images/pattern1.png") repeat scroll 0 0 #F2F2F2;color: #7C7C7C;}
+.navbar.main .topnav > li.open .dropdown-menu{background:none}
+.navbar.main .topnav > li.open .dropdown-menu li{border-bottom:1px solid #ddd;}
+.navbar.main .topnav > li.open .dropdown-menu li > a{color:#7C7C7C;background:url("../images/pattern1.png") repeat scroll 0 0 #f2f2f2;padding:5px 15px}
+.navbar.main .topnav > li.open .dropdown-menu li:hover > a{padding:5px 15px}
+/*table*/
+.table thead tr:first-child{background-color: #36ad36;color:#fff;}
+.table thead tr:first-child a{color:#fff;}
+.table thead tr .caret{vertical-align: middle;margin-left: 5px;border-top-color:#fff;}
+.table .checkbox-column input{margin:0;}
+.table .filter-container input{}
+/*sidebar menu*/
+#menu > .inner > ul{background: none;width: 100%;padding: 0 0;margin: 0;}
+#menu > .inner > ul > li{display:block;margin-bottom:10px;padding:7px 25px;margin: 0 15px;position:relative}
+#menu > .inner > ul > li:hover{
+	background: rgba(0,0,0,0.5);
+	padding: 5px 10px;
+	height: 22px;
+	line-height: 22px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid rgba(0,0,0,0.5);
+	padding:7px 25px;
+	box-shadow:0 -1px 5px rgba(0,0,0,0.3) inset;
+}
+#menu > .inner > ul > li > a{background:none;border:none;box-shadow:none;color:#7C7C7C;display:block}
+#menu > .inner > ul > li:hover a{color:#fff;}
+#menu > .inner > ul > li > a > i:before{font-size: 16px;color: #7C7C7C;top: 10px;left:5px}
+#menu > .inner > ul > li:hover > a > i:before{color: #fff}
+#menu > .inner > ul > li > ul{
+	position:absolute;
+}
+
+/*footer*/
+#footer{padding:0}
+#footer .footer-inner{background: rgba(43, 45, 48, 0.95);overflow: hidden;height: 40px;margin-left: 204px;}
+#footer .glyphicons{color:#fff;vertical-align:middle;float: left;height: 40px;width: 50px;padding: 0;text-align: center;line-height: 40px;position: relative;}
+#footer .glyphicons:after{height: 40px;width: 0px;border-left: 1px solid rgba(0,0,0,0.5);border-right: 1px solid rgba(255,255,255,0.1);position: absolute;right: 0;top: 0;content: "";}#footer .glyphicons i:before{color:#aaa;left: 25%;top: 25%;font-size:20px;}
+#footer .info-pane{float: left;height: 40px;line-height: 40px;margin-right: 13px;}
