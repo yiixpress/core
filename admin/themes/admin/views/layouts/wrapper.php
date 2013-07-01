@@ -32,17 +32,17 @@
 		<div id="menu" class="hidden-phone hidden-print">
 
 			<!-- Scrollable menu wrapper with Maximum height -->
-			<div class="slim-scroll">
+			<div class="inner">
 
 				<!-- Sidebar Profile -->
-			<span class="profile">
-				<a class="img" href="#"><img src="http://dummyimage.com/51x51/232323/ffffff&amp;text=photo"
-				                             alt="Mr. Awesome"/></a>
-				<span>
-					<strong>Welcome</strong>
-					<a href="#" class="glyphicons"><?php echo user()->name; ?><i></i></a>
+				<span class="profile">
+					<a class="img" href="#"><img src="http://dummyimage.com/51x51/232323/ffffff&amp;text=photo"
+												 alt="Mr. Awesome"/></a>
+					<span>
+						<strong>Welcome</strong>
+						<a href="#" class="glyphicons"><?php echo user()->name; ?><i></i></a>
+					</span>
 				</span>
-			</span>
 				<!-- // Sidebar Profile END -->
 
 				<!-- Sidebar Mini Stats -->
