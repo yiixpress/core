@@ -39,8 +39,8 @@
 					// start a new menu
 					$menuHtml .= '
 <li class="hasSubmenu glyphicons '.$m->icon.'">
-	<a data-toggle="collapse" href="#'.$item.'"><i></i><span>' . $item . '</span></a>
-	<ul class="collapse" id="'.$item.'">
+	<a href="#'.$item.'"><i></i><span>' . $item . '</span></a>
+	<ul class="sub-menu hide" id="'.$item.'">
 ';
 				} else
 				// item is a menu
@@ -60,10 +60,10 @@
 		if (strpos($menuHtml, '<li class="hasSubmenu') !== 0)
 			$menuHtml = '
 <li class="hasSubmenu glyphicons '.$m->icon.'">
-	<a href="#'.$m->name.'" data-toggle="collapse">
+	<a href="#'.$m->name.'">
 		<i></i><span>' . $m->friendly_name . '</span>
 	</a>
-	<ul class="collapse" id="'.$m->name.'">
+	<ul class="sub-menu hide" id="'.$m->name.'">
 		' . $menuHtml . '
 	</ul>
 </li>';

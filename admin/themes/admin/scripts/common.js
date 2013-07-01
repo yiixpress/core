@@ -1,4 +1,6 @@
 /* Utility functions */
+/*left sidebar menu*/
+
 
 // scroll to element animation
 function scrollTo(id) {
@@ -117,6 +119,16 @@ function JQSliderCreate() {
 }
 
 $(function () {
+	$("#menu > .inner > ul > li > a").toggle(function() {
+		$("#menu .sub-menu").addClass("hide");
+		$(this).parent().addClass("active");
+		$(this).parent().find(".sub-menu").removeClass("hide");
+	},function() {
+		$(this).parent().removeClass("active");
+		$(this).parent().find(".sub-menu").addClass("hide");
+	});
+	
+	
     // Sidebar menu collapsibles
     $('#menu .collapse').on('show', function (e) {
         e.stopPropagation();
