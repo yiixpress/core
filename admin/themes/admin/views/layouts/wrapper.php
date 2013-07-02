@@ -32,7 +32,7 @@
 		<div id="menu" class="hidden-phone hidden-print">
 
 			<!-- Scrollable menu wrapper with Maximum height -->
-			<div class="inner">
+			<div class="slim-scroll">
 
 				<!-- Sidebar Profile -->
 				<span class="profile">
@@ -119,18 +119,17 @@
 	<div class="clearfix"></div>
 	<!-- // Sidebar menu & content wrapper END -->
 
-	<div id="footer" class="hidden-print">
-		<div class="footer-inner">
-			<div class="pull-left">
-				<a href="#" class="glyphicons fullscreen toggle-sidebar"><i></i></a>
-				<a href="#" class="glyphicons new_window"><i></i></a>
-				<a href="#" class="glyphicons home"><i></i></a>
-				<a href="#" class="glyphicons refresh"><i></i></a>
+	<div id="footer" class="hidden-print navbar">
+		<div class="footer-inner navbar-inner">
+			<div class="pull-left nav">
+				<li><a href="#" class="glyphicons fullscreen toggle-sidebar"><i></i></a></li>
+				<li><a href="#" class="glyphicons new_window"><i></i></a></li>
+				<li><a href="#" class="glyphicons home"><i></i></a></li>
+				<li><a href="#" class="glyphicons refresh"><i></i></a></li>
 			</div>
-			<div class="pull-right">
-				<div
-					class="info-pane"><?php echo app()->request->hostInfo, ' (' . $_SERVER['SERVER_ADDR'] . ')' ?></div>
-				<a href="#" class="glyphicons settings"><i></i></a>
+			<div class="pull-right nav">
+				<li class="info-pane"><?php echo app()->request->hostInfo, ' (' . $_SERVER['SERVER_ADDR'] . ')' ?></li>
+				<li><a href="#" class="glyphicons settings"><i></i></a></li>
 			</div>
 		</div>
 	</div>
