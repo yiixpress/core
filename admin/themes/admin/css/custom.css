@@ -5,15 +5,16 @@ body.login #login .form-signin {max-width: 400px;}
 body > .container-fluid{padding-top:44px;padding-bottom:41px}
 .navbar.main .topnav > li > a.glyphicons.logout {padding:0 28px 0 0}
 .navbar.main{position: fixed;top: 0;left: 0;height: 45px;z-index: 1;width: 100%;}
-.navbar.main .topnav > li.open > a{background: rgba(0,0,0,0.3);height: auto;border-radius: 5px;}
-.navbar.main .topnav > li.open .dropdown-menu{background:#fff;box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.2);top:40px;width: 187px;}
+.navbar.main .topnav > li.open > a{background:#fff;color:#7C7C7C;height:41px}
+.navbar.main .topnav > li.open > a i:before{color:#7C7C7C}
+.navbar.main .topnav > li.open .dropdown-menu{background:#fff;box-shadow:1px 2px 2px -1px rgba(0, 0, 0, 0.1);top:41px;width: 187px;}
 .navbar.main .topnav > li.open .dropdown-menu li > span{background:#36ad36}
 .navbar.main .topnav > li.open .dropdown-menu.pull-left .submenu-show{top:30px}
 .navbar.main .topnav > li.open .dropdown-menu li{border-bottom:1px solid #f3f3f3;}
 .navbar.main .topnav > li.open .dropdown-menu li > a{color:#7C7C7C;background:transparent;padding:5px 15px}
 .navbar.main .topnav > li.open .dropdown-menu li:hover > a{padding:5px 15px;background:#fff;}
-.navbar.main .topnav > li.open > .dropdown-menu:before{content: "";width: 0;height: 0;border: 7px solid transparent;border-bottom-color: #fff;	position: absolute;	top: -13px;	right: 5px;	z-index:1}
-.navbar.main .topnav > li.open > .dropdown-menu:after{content: "";width: 0;height: 0;border: 7px solid transparent;border-bottom-color: #ddd;position: absolute;top: -14px;right: 5px;	z-index:0}
+.navbar.main .topnav > li.open .dropdown-menu .dropdown-menu{top:29px;border-radius:0px;}
+
 
 /*table*/
 .table thead tr:first-child{background-color: #36ad36;color:#fff;}
