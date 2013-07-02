@@ -29,24 +29,23 @@ body > .container-fluid{padding-top:44px;padding-bottom:41px}
 #menu{overflow:visible}
 #menu > .slim-scroll > ul{border: 0;background: none;width: 100%;padding: 0 0;margin: 0;}
 #menu > .slim-scroll > ul .glyphicons{height: auto;border:0;display:block;margin: 0 8px;position:relative;margin-bottom:5px;overflow:visible}
-#menu > .slim-scroll > ul li.glyphicons > a{background: none;border: none;box-shadow: none;color: #7C7C7C;display: block;height: auto;line-height: normal;padding:6px 25px 6px 35px;}
+#menu > .slim-scroll > ul li.glyphicons > a{background: none;border: none;box-shadow: none;color: #7C7C7C;display: block;height: auto;line-height: normal;padding:7px 25px 8px 35px;}
 #menu > .slim-scroll > ul .glyphicons > a .icon-chevron-right{}
 #menu > .slim-scroll > ul .glyphicons > a:hover,
 #menu > .slim-scroll > ul .glyphicons.open > a{
-	background: rgba(0,0,0,0.3);
+	background: #cccccc;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	border-radius: 5px 5px 5px 5px;
-	border: 1px solid rgba(0,0,0,0.3);
-	box-shadow: 0 -1px 5px rgba(0,0,0,0.3) inset;
+	border: 1px solid rgba(0,0,0,0.1);
 	color: #fff;
 	position: relative;
-	padding-bottom: 4px;
+	padding-bottom: 6px;
 }
-#menu > .slim-scroll > ul li.glyphicons > a > i:before{font-size: 15px;color: #7c7c7c;top: 7px;left: 15px;}
+#menu > .slim-scroll > ul li.glyphicons > a > i:before{font-size: 15px;color: #7c7c7c;top: 7px;left: 12px;}
 #menu > .slim-scroll > ul .glyphicons > a:hover > i:before,
 #menu > .slim-scroll > ul .glyphicons.open > a > i:before{color:#fff;}
-#menu > .slim-scroll > ul .glyphicons .chevron-right{position: absolute;right: -11px;top: -2px;}
+#menu > .slim-scroll > ul .glyphicons .chevron-right{position: absolute;right: -11px;top: -1px;}
 #menu > .slim-scroll > ul .glyphicons .chevron-right i:before{font-size:13px}
 #menu > .slim-scroll > ul .glyphicons a:hover .chevron-right i:before,
 #menu > .slim-scroll > ul .glyphicons.open a .chevron-right i:before{color:#fff;}
