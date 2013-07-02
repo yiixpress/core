@@ -65,7 +65,7 @@ body > .container-fluid{padding-top:44px;padding-bottom:41px}
 }
 #menu > .slim-scroll .dropdown-menu.open{display:block}
 #menu > .slim-scroll .dropdown-menu a{box-shadow:none;display:block}
-#menu > .slim-scroll .dropdown-menu a:hover{color:#000;background:transparent}
+#menu > .slim-scroll .dropdown-menu a:hover{color:#000;background:transparent;font-weight:bold;text-shadow:none}
 #menu > .slim-scroll .dropdown-menu li a{padding-left:20px;border-radius:0;display:block;color:#939494;padding:5px 20px;border-bottom:1px solid rgba(0,0,0,.1)}
 #menu > .slim-scroll .dropdown-menu li.divider{height:0;margin:0;padding:0;display:block;border-top:#939494}
 #menu > .slim-scroll .dropdown-menu:before{
