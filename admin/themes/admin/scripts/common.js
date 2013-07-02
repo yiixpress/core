@@ -145,10 +145,12 @@ $(function () {
 		$(".footer-inner").addClass("wide");	
 		$("#menu").addClass("hide");
 		$("#content").addClass("wide");
+		$(".footer-inner .fullscreen").removeClass("fullscreen").addClass("resize_small");
 	},function() {
 		$("#content").removeClass("wide");
 		$("#menu").removeClass("hide");
 		$(".footer-inner").removeClass("wide");
+		$(".footer-inner .resize_small").removeClass("resize_small").addClass("fullscreen");
 	});
 	
     // Sidebar menu collapsibles
