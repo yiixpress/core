@@ -72,7 +72,7 @@ class TbToggleButton extends CInputWidget
 	 * @var string the style of the toggle button disabled style
 	 * Accepted values ["primary", "danger", "info", "success", "warning"] or nothing
 	 */
-	public $disabledStyle = null;
+	public $disabledStyle = NULL;
 
 	/**
 	 * @var array a custom style for the enabled option. Format
@@ -109,17 +109,18 @@ class TbToggleButton extends CInputWidget
 	{
 		list($name, $id) = $this->resolveNameID();
 
-		echo CHtml::openTag('div', array('id'=>'wrapper-'.$id));
+		echo CHtml::openTag('div', array('id' => 'wrapper-' . $id));
 
-		if ($this->hasModel())
-		{
-			if($this->form)
+		if ($this->hasModel()) {
+			if ($this->form) {
 				echo $this->form->checkBox($this->model, $this->attribute, $this->htmlOptions);
-			else
+			} else {
 				echo CHtml::activeCheckBox($this->model, $this->attribute, $this->htmlOptions);
+			}
 
-		} else
+		} else {
 			echo CHtml::checkBox($name, $this->value, $this->htmlOptions);
+		}
 
 		echo '</div>';
 
@@ -139,7 +140,7 @@ class TbToggleButton extends CInputWidget
 
 		$config = CJavaScript::encode($this->getConfiguration());
 
-		$cs->registerScript(__CLASS__.'#'.$this->getId(), "$('#wrapper-{$id}').toggleButtons({$config});");
+		$cs->registerScript(__CLASS__ . '#' . $this->getId(), "$('#wrapper-{$id}').toggleButtons({$config});");
 
 	}
 
@@ -148,58 +149,60 @@ class TbToggleButton extends CInputWidget
 	 */
 	protected function getConfiguration()
 	{
-		if($this->onChange!==null)
-		{
-			if((!$this->onChange instanceof CJavaScriptExpression) && strpos($this->onChange,'js:')!==0)
-			{
-				$onChange=new CJavaScriptExpression($this->onChange);
+		$ref = new ReflectionClass($this);
+		foreach ($this->htmlOptions as $key => $val)
+			if (
+				($ref->hasProperty($key) && $ref->getProperty($key)->isPublic()) // public property
+				||
+				$ref->hasMethod('set' . $key) // writable property via setter
+			) {
+				$this->$key = $val;
 			}
-			else
-			{
-				$onChange=$this->onChange;
+
+		if ($this->onChange !== NULL) {
+			if ((!$this->onChange instanceof CJavaScriptExpression) && strpos($this->onChange, 'js:') !== 0) {
+				$onChange = new CJavaScriptExpression($this->onChange);
+			} else {
+				$onChange = $this->onChange;
 			}
-		}
-		else
-		{
+		} else {
 			$onChange = 'js:$.noop';
 		}
 
 		$config = array(
-		   'onChange' => $onChange,
-			'width' => $this->width,
-			'height' => $this->height,
-			'animated' => $this->animated,
+			'onChange'        => $onChange,
+			'width'           => $this->width,
+			'height'          => $this->height,
+			'animated'        => $this->animated,
 			'transitionSpeed' => $this->transitionSpeed,
-			'label' => array(
-				'enabled' => $this->enabledLabel,
+			'label'           => array(
+				'enabled'  => $this->enabledLabel,
 				'disabled' => $this->disabledLabel
 			),
-			'style' => array()
+			'style'           => array()
 		);
-		if(!empty($this->enabledStyle))
-		{
+		if (!empty($this->enabledStyle)) {
 			$config['style']['enabled'] = $this->enabledStyle;
 		}
-		if(!empty($this->disabledStyle))
-		{
+		if (!empty($this->disabledStyle)) {
 			$config['style']['disabled'] = $this->disabledStyle;
 		}
-		if(!empty($this->customEnabledStyle))
-		{
-			$config['style']['custom']= array('enabled'=>$this->customEnabledStyle);
+		if (!empty($this->customEnabledStyle)) {
+			$config['style']['custom'] = array('enabled' => $this->customEnabledStyle);
 		}
-		if(!empty($this->customDisabledStyle))
-		{
-			if(isset($config['style']['custom']))
+		if (!empty($this->customDisabledStyle)) {
+			if (isset($config['style']['custom'])) {
 				$config['style']['custom']['disabled'] = $this->customDisabledStyle;
-			else
-				$config['style']['custom'] = array('disabled'=>$this->customDisabledStyle);
+			} else {
+				$config['style']['custom'] = array('disabled' => $this->customDisabledStyle);
+			}
 		}
-		foreach($config as $key=>$element)
-		{
-			if(empty($element))
+		foreach ($config as $key => $element) {
+			if (empty($element)) {
 				unset($config[$key]);
+			}
 		}
+
 		return $config;
 	}
 }
