@@ -119,9 +119,22 @@ function JQSliderCreate() {
 }
 
 $(function () {
-	
-	$(".dropdown-toggle").dropdown();
 	/*resize window*/
+	$(".dropdown-toggle").click(function() {
+		$(".dropdown-toggle").parent().removeClass("open");
+		if(!$(this).parent().find(".dropdown-menu").hasClass("open")) {
+			$(this).parent().addClass("open")
+		}else{
+			$(this).parent().removeClass("open")
+		}
+	});
+	$(document).click(function(e) {		
+		if(!$("#menu .dropdown-menu").hasClass("open")){
+			$("#menu .dropdown").removeClass("open");
+		}
+	});
+	
+	
 	$(window).resize(function() {
 		var w_height = $(window).height();
 		$("#content").height(w_height - 95);
@@ -132,10 +145,12 @@ $(function () {
 		$(".footer-inner").addClass("wide");	
 		$("#menu").addClass("hide");
 		$("#content").addClass("wide");
+		$(".footer-inner .fullscreen").removeClass("fullscreen").addClass("resize_small");
 	},function() {
 		$("#content").removeClass("wide");
 		$("#menu").removeClass("hide");
 		$(".footer-inner").removeClass("wide");
+		$(".footer-inner .resize_small").removeClass("resize_small").addClass("fullscreen");
 	});
 	
     // Sidebar menu collapsibles

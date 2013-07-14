@@ -26,7 +26,7 @@
 			else
 				$items = $module->BackendMenuItems;
 		}
-
+		
 		// start HTML code for module's menu
 		$menuHtml = '';
 		try {
@@ -38,9 +38,10 @@
 						$menuHtml .= '</ul></li>';
 					// start a new menu
 					$menuHtml .= '
-<li class="hasSubmenu glyphicons '.$m->icon.'">
-	<a href="#'.$item.'"><i></i><span>' . $item . '</span></a>
-	<ul class="sub-menu hide" id="'.$item.'">
+					
+<li class="dropdown glyphicons '.$m->icon.'">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#'.$item.'"><i></i>' . $item . '<span class="glyphicons chevron-right"><i></i></span></a>
+	<ul role="menu" class="dropdown-menu" id="'.$item.'">
 ';
 				} else
 				// item is a menu
@@ -57,13 +58,13 @@
 		} catch (Exception $ex) {
 		}
 
-		if (strpos($menuHtml, '<li class="hasSubmenu') !== 0)
+		if (strpos($menuHtml, '<li class="dropdown') !== 0)
 			$menuHtml = '
-<li class="hasSubmenu glyphicons '.$m->icon.'">
-	<a href="#'.$m->name.'">
-		<i></i><span>' . $m->friendly_name . '</span>
+<li class="dropdown glyphicons '.$m->icon.'">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#'.$m->name.'">
+		<i></i>' . $m->friendly_name . '<span class="glyphicons chevron-right"><i></i></span>
 	</a>
-	<ul class="sub-menu hide" id="'.$m->name.'">
+	<ul role="menu" class="dropdown-menu" id="'.$m->name.'">
 		' . $menuHtml . '
 	</ul>
 </li>';

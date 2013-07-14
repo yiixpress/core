@@ -5,17 +5,18 @@ body.login #login .form-signin {max-width: 400px;}
 body > .container-fluid{padding-top:44px;padding-bottom:41px}
 .navbar.main .topnav > li > a.glyphicons.logout {padding:0 28px 0 0}
 .navbar.main{position: fixed;top: 0;left: 0;height: 45px;z-index: 1;width: 100%;}
-.navbar.main .topnav > li.open > a{background:#fff;color:#7C7C7C;height:41px}
-.navbar.main .topnav > li.open > a i:before{color:#7C7C7C}
-.navbar.main .topnav > li.open .dropdown-menu{background:#fff;box-shadow:1px 2px 2px -1px rgba(0, 0, 0, 0.1);top:41px;width: 187px;}
-.navbar.main .topnav > li.open .dropdown-menu li > span{background:#36ad36}
-.navbar.main .topnav > li.open .dropdown-menu.pull-left .submenu-show{top:30px}
+.navbar.main .topnav > li.open > a{background: #fff;height: 40px;color:#7C7C7C;}
+.navbar.main .topnav > li.open > a i:before{color:#7C7C7C;}
+.navbar.main .topnav > li.open .dropdown-menu{background:#fff;box-shadow:0 3px 4px 1px rgba(0, 0, 0, 0.1);top:40px;width: 222px;}
+.navbar.main .topnav > li.open .dropdown-menu li > span{background:#fff}
+.navbar.main .topnav > li.open .dropdown-menu li.highlight.profile a{color:inherit}
+.navbar.main .topnav > li.open .dropdown-menu li.highlight.profile a:hover{color:#7C7C7C}
+.navbar.main .topnav > li.open .dropdown-menu li.highlight.profile > span{background:#fff;}
+
+.navbar.main .topnav > li.open .dropdown-menu .submenu-show{top: 29px;border-radius: 0;}
 .navbar.main .topnav > li.open .dropdown-menu li{border-bottom:1px solid #f3f3f3;}
 .navbar.main .topnav > li.open .dropdown-menu li > a{color:#7C7C7C;background:transparent;padding:5px 15px}
 .navbar.main .topnav > li.open .dropdown-menu li:hover > a{padding:5px 15px;background:#fff;}
-.navbar.main .topnav > li.open .dropdown-menu .dropdown-menu{top:29px;border-radius:0px;}
-
-
 /*table*/
 .table thead tr:first-child{background-color: #36ad36;color:#fff;}
 .table thead tr:first-child a{color:#fff;}
@@ -26,26 +27,31 @@ body > .container-fluid{padding-top:44px;padding-bottom:41px}
 #content.wide{margin-left:0;}
 /*sidebar menu*/
 #menu{overflow:visible}
-#menu > .slim-scroll > ul{background: none;width: 100%;padding: 0 0;margin: 0;}
-#menu > .slim-scroll > ul .glyphicons{display:block;margin: 0 15px;position:relative;margin-bottom:5px;overflow:visible}
-#menu > .slim-scroll > ul li.glyphicons > a{background: none;border: none;box-shadow: none;color: #7C7C7C;display: block;height: auto;line-height: normal;padding: 10px 25px 7px 45px;}
+#menu > .slim-scroll > ul{border: 0;background: none;width: 100%;padding: 0 0;margin: 0;}
+#menu > .slim-scroll > ul .glyphicons{height: auto;border:0;display:block;margin: 0 8px;position:relative;margin-bottom:5px;overflow:visible}
+#menu > .slim-scroll > ul li.glyphicons > a{background: none;border: none;box-shadow: none;color: #7C7C7C;display: block;height: auto;line-height: normal;padding:7px 25px 8px 35px;}
 #menu > .slim-scroll > ul .glyphicons > a .icon-chevron-right{}
 #menu > .slim-scroll > ul .glyphicons > a:hover,
-#menu > .slim-scroll > ul .glyphicons.active > a{
-	background: rgba(0,0,0,0.5);	
+#menu > .slim-scroll > ul .glyphicons.open > a{
+	background: #cccccc;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	border-radius: 5px 5px 5px 5px;
-	border: 1px solid rgba(0,0,0,0.5);	
-	box-shadow:0 -1px 5px rgba(0,0,0,0.3) inset;
-	color:#fff;
+	border: 1px solid rgba(0,0,0,0.1);
+	color: #fff;
+	position: relative;
+	padding-bottom: 6px;
 }
-#menu > .slim-scroll > ul .glyphicons > a > i:before{font-size: 16px;color: #7C7C7C;top: 10px;left:5px}
+#menu > .slim-scroll > ul li.glyphicons > a > i:before{font-size: 15px;color: #7c7c7c;top: 7px;left: 12px;}
 #menu > .slim-scroll > ul .glyphicons > a:hover > i:before,
-#menu > .slim-scroll > ul .glyphicons.active > a > i:before{color:#fff;}
+#menu > .slim-scroll > ul .glyphicons.open > a > i:before{color:#fff;}
+#menu > .slim-scroll > ul .glyphicons .chevron-right{position: absolute;right: -11px;top: -1px;}
+#menu > .slim-scroll > ul .glyphicons .chevron-right i:before{font-size:13px}
+#menu > .slim-scroll > ul .glyphicons a:hover .chevron-right i:before,
+#menu > .slim-scroll > ul .glyphicons.open a .chevron-right i:before{color:#fff;}
 #menu > .slim-scroll > ul .dropdown-menu{
 	position: absolute;
-	left: 188px;
+	left: 195px;
 	z-index: 9;
 	background: #fff;
 	width: 182px;
@@ -59,7 +65,7 @@ body > .container-fluid{padding-top:44px;padding-bottom:41px}
 }
 #menu > .slim-scroll .dropdown-menu.open{display:block}
 #menu > .slim-scroll .dropdown-menu a{box-shadow:none;display:block}
-#menu > .slim-scroll .dropdown-menu a:hover{color:#000;background:transparent}
+#menu > .slim-scroll .dropdown-menu a:hover{color:#000;background:transparent;font-weight:bold;text-shadow:none}
 #menu > .slim-scroll .dropdown-menu li a{padding-left:20px;border-radius:0;display:block;color:#939494;padding:5px 20px;border-bottom:1px solid rgba(0,0,0,.1)}
 #menu > .slim-scroll .dropdown-menu li.divider{height:0;margin:0;padding:0;display:block;border-top:#939494}
 #menu > .slim-scroll .dropdown-menu:before{
@@ -72,12 +78,12 @@ body > .container-fluid{padding-top:44px;padding-bottom:41px}
 	left:-13px;
 	top:5px;
 }
-
+#menu .slim-scroll > ul > li.glyphicons .dropdown-menu  a{padding:0 0 0 20px;}
 /*footer*/
 #footer{padding:0;position:fixed;height:41px;bottom:0;left:0;width:100%;margin-bottom:0;}
 #footer .navbar-inner.wide{margin-left:0}
-#footer .navbar-inner{padding:0;border:0;background: rgba(43, 45, 48, 0.95);overflow: hidden;height: 40px;margin-left: 204px;}
-#footer .glyphicons{color:#fff;vertical-align:middle;float: left;height: 40px;width: 50px;padding: 0;text-align: center;line-height: 40px;position: relative;}
+#footer .navbar-inner{border-radius: 0;padding:0;border:0;background: rgba(43, 45, 48, 0.95);overflow: hidden;height: 40px;margin-left: 204px;}
+#footer .glyphicons{text-shadow: none;color:#fff;vertical-align:middle;float: left;height: 40px;width: 50px;padding: 0;text-align: center;line-height: 40px;position: relative;}
 #footer .glyphicons i:before{color:#aaa;left: 25%;top: 25%;font-size:20px;-webkit-transition:color 0.2s;transition:color 0.2s;-moz-transition:color 0.2s}
 #footer .glyphicons:hover i:before{color:#fff}
 #footer .nav li{float:left;height: 40px;border-right: 1px solid rgba(0,0,0,0.5);border-left: 1px solid rgba(255,255,255,0.1);}

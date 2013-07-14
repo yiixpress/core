@@ -33,6 +33,9 @@ html .halflings {
   font-style: normal;
   color: #1d1d1b;
 }
+.glyphicons.pen i:before {
+  content: "\e236";
+}
 .glyphicons.white i:before {
   color: #fff;
 }
@@ -740,9 +743,6 @@ html .halflings {
 }
 .glyphicons.brush i:before {
   content: "\e235";
-}
-.glyphicons.pen i:before {
-  content: "\e236";
 }
 .glyphicons.zoom_in i:before {
   content: "\e237";
